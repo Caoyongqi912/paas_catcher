@@ -1,3 +1,4 @@
+from plafroms.ios.iosDevice import IOS
 from plafroms.mac.mac import Mac
 
 
@@ -9,10 +10,15 @@ def run(plat, s):
     elif plat == "and":
         pass
     elif plat == "ios":
-        pass
+        IOS(s).catch()
     else:
         print("?")
 
 
 if __name__ == '__main__':
+    """
+    mac 1 = 1h *10
+    
+    ios 1 = 1h
+    """
     run("mac", 1)

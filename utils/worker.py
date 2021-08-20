@@ -10,17 +10,29 @@ from matplotlib import pyplot
 class Worker:
 
     @staticmethod
-    def read(path):
+    def read(path, opt):
         """
         读取
         :param path: 日志地址
         :return:
         """
-
-        with open(path, "r") as fp:
-            body = fp.read()
-            cpuInfo = re.findall(r"cpu=(.*?) mem=(.*?)\n", body)
-            return cpuInfo
+        if opt == "mac":
+            with open(path, "r") as fp:
+                body = fp.read()
+                cpuInfo = re.findall(r"cpu=(.*?) mem=(.*?)\n", body)
+                return cpuInfo
+        elif opt == "ios":
+            with open(path, "r") as fp:
+                body = fp.read()
+                cpuInfo = re.findall(r"cpu:ts=(.*?);value=(.*?),count=(.*?)\n", body)
+                memInfo = re.findall(r"memory:ts=(.*?);value=(.*?)\n", body)
+                cpu = []
+                mem = []
+                for i in cpuInfo:
+                    cpu.append((i[0], float(i[1]) * int(i[2])))
+                for i in memInfo:
+                    mem.append((i[0], float(i[1])))
+                return cpu, mem
 
     @staticmethod
     def paint(title: str, avg: str, y_label: str, x_label: str, x: list, y: list, savefig: str):
@@ -36,10 +48,8 @@ class Worker:
         """
         pyplot.figure(figsize=(20, 10))
         pyplot.title(f"{title} AVG:{avg} MAX:{max(y)} MIN:{min(y)}")
+        pyplot.xticks(rotation=90)
         pyplot.ylabel(y_label)
         pyplot.xlabel(x_label)
         pyplot.plot(x, y)
         pyplot.savefig(savefig)
-
-
-

@@ -3,9 +3,13 @@
 # @Time    : 2021/8/20 10:03 上午 
 # @Author  : cyq
 # @File    : ios.py
+import json
 import time
 
 from ios_device import py_ios_device
+import tidevice
+
+from utils.Shell import Shell
 
 
 class Ios:
@@ -41,8 +45,13 @@ class Ios:
 
 
 if __name__ == '__main__':
-    ios = Ios()
-    ios.getCPU()
-    ios.getNetwork()
+    pass
+    # ios = Ios()
+    # # ios.getCPU()
+    # # ios.getNetwork()
     # for i in ios.getProcess():
     #     print(i)
+    # "pyidevice instruments sysmontap -p 379  --proc_filter memVirtualSize,cpuUsage --processes"
+    # "379 rzpaas_example_ios       com.duobei.rzpaas-example-ios PaaSTest"
+    # cmd = "tidevice perf -B com.duobei.rzpaas-example-ios >> ios_out.txt"
+    # Shell.invoke(cmd)
