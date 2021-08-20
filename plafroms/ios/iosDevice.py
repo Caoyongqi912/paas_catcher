@@ -17,7 +17,7 @@ class IOS:
     path = os.path.join(os.path.dirname(__file__), "ios_out.txt")
 
     def __init__(self, catch_time: int = 0):
-        self.ctime = catch_time
+        self.ctime = catch_time * 60 * 60
         if os.path.exists(self.path):
             os.remove(self.path)
 
@@ -35,10 +35,12 @@ class IOS:
         cpuInfo, memInfo = Worker.read(self.path, "ios")
         for c in cpuInfo:
             cpu.append(round(c[1], 2))
-            cpuNum.append(c[0])
+            t = time.strftime("%H:%M:%S", time.localtime(int(c[0])))
+            cpuNum.append(t)
         for m in memInfo:
             mem.append(round(m[1], 2))
-            memNum.append(m[0])
+            t = time.strftime("%H:%M:%S", time.localtime(int(m[0])))
+            memNum.append(t)
 
         cpuPic = os.path.join(os.path.dirname(__file__), "ios_cpu.jpg")
         memPic = os.path.join(os.path.dirname(__file__), "ios_mem.jpg")
@@ -71,5 +73,5 @@ class IOS:
 
 
 if __name__ == '__main__':
-    ios = IOS(50)
+    ios = IOS(10)
     ios.catch()
