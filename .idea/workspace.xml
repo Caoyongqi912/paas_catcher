@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4df8db24-4124-48da-b8fe-5df004ce7de9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/android/DeviceInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/DeviceInfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/android/android.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/android.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +190,7 @@
       <updated>1629431106639</updated>
       <workItem from="1629431110715" duration="15000" />
       <workItem from="1629431235318" duration="10699000" />
-      <workItem from="1629700781986" duration="6249000" />
+      <workItem from="1629700781986" duration="8110000" />
     </task>
     <servers />
   </component>
