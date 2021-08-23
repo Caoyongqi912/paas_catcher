@@ -6,22 +6,25 @@
 import re
 from matplotlib import pyplot
 
+from utils.opt import PlaForms
+
 
 class Worker:
 
     @staticmethod
-    def read(path, opt):
+    def read(path, opt: PlaForms):
         """
         读取
         :param path: 日志地址
+        :param opt: PlaForms
         :return:
         """
-        if opt == "mac":
+        if opt == PlaForms.MAC:
             with open(path, "r") as fp:
                 body = fp.read()
                 cpuInfo = re.findall(r"cpu=(.*?) mem=(.*?)\n", body)
                 return cpuInfo
-        elif opt == "ios":
+        elif opt == PlaForms.IOS:
             with open(path, "r") as fp:
                 body = fp.read()
                 cpuInfo = re.findall(r"cpu:ts=(.*?);value=(.*?),count=(.*?)\n", body)

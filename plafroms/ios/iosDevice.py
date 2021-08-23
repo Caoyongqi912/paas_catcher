@@ -9,6 +9,7 @@ import time
 import tidevice
 from tidevice import DataType
 from utils.worker import Worker
+from utils.opt import PlaForms
 
 
 class IOS:
@@ -18,21 +19,19 @@ class IOS:
 
     def __init__(self, catch_time: int = 0):
         self.ctime = catch_time * 60 * 60
+
         if os.path.exists(self.path):
             os.remove(self.path)
 
-    def info(self):
-        print("测试开始。 请确认已开启 paas test")
-        return self.t.info
-
     def catch(self):
+
         self._start()
         cpu = []
         cpuNum = []
         mem = []
         memNum = []
 
-        cpuInfo, memInfo = Worker.read(self.path, "ios")
+        cpuInfo, memInfo = Worker.read(self.path, PlaForms.IOS)
         for c in cpuInfo:
             cpu.append(round(c[1], 2))
             t = time.strftime("%H:%M:%S", time.localtime(int(c[0])))
@@ -73,5 +72,5 @@ class IOS:
 
 
 if __name__ == '__main__':
-    ios = IOS(10)
-    ios.catch()
+    a = tidevice.Device()
+    print(a)

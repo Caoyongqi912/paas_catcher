@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4df8db24-4124-48da-b8fe-5df004ce7de9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plafroms/andriod/DeviceInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/DeviceInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plafroms/andriod/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plafroms/ios/iosDevice.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/ios/iosDevice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plafroms/mac/mac.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/mac/mac.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/worker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +43,51 @@
       <recent name="$PROJECT_DIR$/plaforms" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.iosDevice">
+  <component name="RunManager" selected="Python.android">
+    <configuration name="DeviceInfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="plat_catcher" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plafroms/android" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plafroms/android/DeviceInfo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="android" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="plat_catcher" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plafroms/android" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plafroms/android/android.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="plat_catcher" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +178,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.android" />
+        <item itemvalue="Python.DeviceInfo" />
         <item itemvalue="Python.iosDevice" />
         <item itemvalue="Python.worker" />
         <item itemvalue="Python.ios" />
@@ -144,6 +196,7 @@
       <updated>1629431106639</updated>
       <workItem from="1629431110715" duration="15000" />
       <workItem from="1629431235318" duration="10699000" />
+      <workItem from="1629700781986" duration="2512000" />
     </task>
     <servers />
   </component>
@@ -153,6 +206,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/plat_catcher$worker.coverage" NAME="worker Coverage Results" MODIFIED="1629446752379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/plat_catcher$ios.coverage" NAME="ios Coverage Results" MODIFIED="1629442752429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/ios" />
-    <SUITE FILE_PATH="coverage/plat_catcher$TIOS.coverage" NAME="iosDevice Coverage Results" MODIFIED="1629448295849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/ios" />
+    <SUITE FILE_PATH="coverage/plat_catcher$TIOS.coverage" NAME="iosDevice Coverage Results" MODIFIED="1629448368032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/ios" />
+    <SUITE FILE_PATH="coverage/plat_catcher$iosDevice.coverage" NAME="iosDevice Coverage Results" MODIFIED="1629452618527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/ios" />
+    <SUITE FILE_PATH="coverage/plat_catcher$android.coverage" NAME="android Coverage Results" MODIFIED="1629703238529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/android" />
+    <SUITE FILE_PATH="coverage/plat_catcher$DeviceInfo.coverage" NAME="DeviceInfo Coverage Results" MODIFIED="1629701274186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plafroms/android" />
   </component>
 </project>

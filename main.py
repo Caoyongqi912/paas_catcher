@@ -1,24 +1,26 @@
+from plafroms.android.android import ANDROID
 from plafroms.ios.iosDevice import IOS
 from plafroms.mac.mac import Mac
+from utils.opt import PlaForms
 
 
-def run(plat, s):
-    if plat == "mac":
-        Mac(s).catch()
-    elif plat == "win":
-        pass
-    elif plat == "and":
-        pass
-    elif plat == "ios":
-        IOS(s).catch()
+def run(plat: str, t):
+    if plat == PlaForms.MAC:
+        Mac(t).catch()
+    elif plat == PlaForms.WINDOWS:
+        print("==")
+    elif plat == PlaForms.ANDROID:
+        ANDROID(t).catch()
+    elif plat == PlaForms.IOS:
+        IOS(t).catch()
     else:
         print("?")
 
 
 if __name__ == '__main__':
     """
-    mac 1 = 1h *10
-    
+    mac 1 = 1h
     ios 1 = 1h
+    android 1 = 1h
     """
     run("mac", 1)

@@ -99,7 +99,6 @@ class DeviceInfo:
         """
         _cmd = self.adbPath + 'adb -s %s shell dumpsys meminfo %s' % (device_id, package_name)
         me = self.shell.invoke(_cmd)
-        print(me)
         mem_size = float(re.findall(r"TOTAL   (.*?)   ", me)[0]) / 1024
         return round(mem_size, 2)
 
@@ -121,7 +120,7 @@ class DeviceInfo:
         """
         _cmd = self.adbPath + 'adb -s %s shell dumpsys cpuinfo | grep %s' % (device_id, package_name)
         cpu_info = self.shell.invoke(_cmd)
-        return cpu_info.split()[0]
+        return float(cpu_info.split()[0].split("%")[0])
 
     def get_pid(self, device_id, package_name):
         """
@@ -162,7 +161,7 @@ class DeviceInfo:
         """
         _cmd = self.adbPath + "adb -s {} shell cat /proc/cpuinfo".format(device_id)
         output = self.shell.invoke(_cmd)
-        return str(len(re.findall("processor", output))) + "核"
+        return int(len(re.findall("processor", output)))
 
     def get_app_version_name(self, device_id, package_name):
         """
@@ -194,4 +193,7 @@ if __name__ == '__main__':
     pl = ['com.rz.paas.test', 'com.rz.paas.test.LoginActivity']
     d = DeviceInfo()
     id = d.get_device_id()
-    print(d.get_current_package_name(id))
+    print(d.get_cpu_kel(id))
+    print(d.get_cup_info(id, pl[0]))
+    print(d.get_memory_info(id, pl[0]))
+    print(d.get_pid(id, pl[0]))

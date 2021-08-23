@@ -6,6 +6,7 @@
 import os
 
 from utils.Shell import Shell
+from utils.opt import PlaForms
 from utils.worker import Worker
 
 
@@ -25,13 +26,12 @@ class Mac:
 
         _cmd = "top  -l 10 -s 1 -ncols 10 | grep -E 'rzpaas_examp' | awk '{print  $2,\"cpu=\"$3,\"mem=\"$8 }'  >> " + path
         print("测试开始。 请确认已开启 paastest")
-        while self.ctime > 0:
+        for t in range(int(self.ctime / 10)):
             Shell.invoke(_cmd)
-            self.ctime -= 1
-            print(f"step {self.ctime} ..")
+            print(f"catch step {t} ..")
         print("测试结束，生成测试报告中。。。。")
 
-        info = Worker.read(path)
+        info = Worker.read(path, opt=PlaForms.MAC)
         cpu = []
         mem = []
         for i in info:
