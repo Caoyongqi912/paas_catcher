@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4df8db24-4124-48da-b8fe-5df004ce7de9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/andriod/DeviceInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/DeviceInfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/andriod/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/android/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/ios/iosDevice.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/ios/iosDevice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plafroms/mac/mac.py" beforeDir="false" afterPath="$PROJECT_DIR$/plafroms/mac/mac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/worker.py" afterDir="false" />
-    </list>
+    <list default="true" id="4df8db24-4124-48da-b8fe-5df004ce7de9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +188,7 @@
       <updated>1629431106639</updated>
       <workItem from="1629431110715" duration="15000" />
       <workItem from="1629431235318" duration="10699000" />
-      <workItem from="1629700781986" duration="2512000" />
+      <workItem from="1629700781986" duration="2887000" />
     </task>
     <servers />
   </component>
