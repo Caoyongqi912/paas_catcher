@@ -7,12 +7,12 @@ from utils.opt import PlaForms
 def run(plat: str, t):
     if plat == PlaForms.MAC:
         Mac(t).catch()
-    elif plat == PlaForms.WINDOWS:
-        print("==")
     elif plat == PlaForms.ANDROID:
         ANDROID(t).catch()
     elif plat == PlaForms.IOS:
         IOS(t).catch()
+    elif plat == PlaForms.WINDOWS:
+        print("==")
     else:
         print("?")
 
@@ -23,4 +23,4 @@ if __name__ == '__main__':
     ios 1 = 1h
     android 1 = 1h
     """
-    run("mac", 1)
+    run("android", 1)

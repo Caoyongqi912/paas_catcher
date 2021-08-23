@@ -18,7 +18,7 @@ class ANDROID:
         self.cpuList = []
         self.memList = []
 
-        self.ctime = catch_time
+        self.ctime = catch_time * 60 * 60
         self.id = self.device.get_device_id()
         self.kel = self.device.get_cpu_kel(self.id)
         self.pla = self.device.get_current_package_name(self.id)[0]
