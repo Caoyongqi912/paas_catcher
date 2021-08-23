@@ -194,6 +194,7 @@ if __name__ == '__main__':
     d = DeviceInfo()
     id = d.get_device_id()
     print(d.get_cpu_kel(id))
+    print(d.get_current_package_name(id))
     print(d.get_cup_info(id, pl[0]))
     print(d.get_memory_info(id, pl[0]))
     print(d.get_pid(id, pl[0]))

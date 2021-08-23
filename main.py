@@ -23,4 +23,4 @@ if __name__ == '__main__':
     ios 1 = 1h
     android 1 = 1h
     """
-    run("android", 1)
+    run("android", 0.2)

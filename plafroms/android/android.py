@@ -38,8 +38,8 @@ class ANDROID:
         cpuNum = [i for i in range(len(self.cpuList))]
         memNum = [i for i in range(len(self.memList))]
 
-        cpu_avg = sum(self.cpuList) / len(self.cpuList)
-        mem_avg = sum(self.memList) / len(self.memList)
+        cpu_avg = round(sum(self.cpuList) / len(self.cpuList), 2)
+        mem_avg = round(sum(self.memList) / len(self.memList), 2)
 
         Worker.paint(title="MAC_CPU", avg=cpu_avg, y_label="CPU(%)", x_label="Time", x=cpuNum, y=self.cpuList,
                      savefig=cpuPic)
@@ -59,4 +59,4 @@ class ANDROID:
 
 
 if __name__ == '__main__':
-    ANDROID(120).catch()
+    ANDROID(1).catch()
