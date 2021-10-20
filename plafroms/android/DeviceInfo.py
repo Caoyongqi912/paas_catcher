@@ -27,6 +27,8 @@ class DeviceInfo:
         """
         _cmd = self.adbPath + "adb devices | grep device | sed '1d' | awk '{print $1}'"
         device_id = self.shell.invoke(_cmd)
+        if not device_id:
+            raise "设备未连接！"
         return device_id.strip()
 
     def get_devices(self) -> []:
@@ -100,6 +102,7 @@ class DeviceInfo:
         _cmd = self.adbPath + 'adb -s %s shell dumpsys meminfo %s' % (device_id, package_name)
         me = self.shell.invoke(_cmd)
         mem_size = float(re.findall(r"TOTAL   (.*?)   ", me)[0]) / 1024
+        print("mem_size:"+str(mem_size))
         return round(mem_size, 2)
 
     def get_battery(self, device_id) -> float:
@@ -120,6 +123,7 @@ class DeviceInfo:
         """
         _cmd = self.adbPath + 'adb -s %s shell dumpsys cpuinfo | grep %s' % (device_id, package_name)
         cpu_info = self.shell.invoke(_cmd)
+        print("cpu_info:"+cpu_info)
         return float(cpu_info.split()[0].split("%")[0])
 
     def get_pid(self, device_id, package_name):
@@ -190,11 +194,12 @@ class DeviceInfo:
 
 
 if __name__ == '__main__':
-    pl = ['com.rz.paas.test', 'com.rz.paas.test.LoginActivity']
+    pl = ['com.rz.paas.test']
     d = DeviceInfo()
     id = d.get_device_id()
+    print(id)
     print(d.get_cpu_kel(id))
     print(d.get_current_package_name(id))
-    print(d.get_cup_info(id, pl[0]))
+    print(d.get_cup_info(id, pl[0])/8)
     print(d.get_memory_info(id, pl[0]))
-    print(d.get_pid(id, pl[0]))
+    # print(d.get_pid(id, pl[0]))

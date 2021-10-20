@@ -4,8 +4,6 @@
 # @Author  : cyq
 # @File    : android.py
 import os
-import time
-
 from plafroms.android.DeviceInfo import DeviceInfo
 from utils.worker import Worker
 
@@ -18,7 +16,7 @@ class ANDROID:
         self.cpuList = []
         self.memList = []
 
-        self.ctime = catch_time * 60 * 60
+        self.ctime = catch_time
         self.id = self.device.get_device_id()
         self.kel = self.device.get_cpu_kel(self.id)
         self.pla = self.device.get_current_package_name(self.id)[0]
@@ -28,7 +26,7 @@ class ANDROID:
 
     def catch(self):
         print("start")
-        for t in range(int(self.ctime / 3)):
+        for t in range(self.ctime):
             print(f"catch step {t} ..")
             self._start()
         print("over")
@@ -54,9 +52,4 @@ class ANDROID:
         self.memList.append(mem)
         with open(self.path, "a") as fp:
             fp.write(f"cpu={cpu};mem={mem}\n")
-        time.sleep(3)
         return
-
-
-if __name__ == '__main__':
-    ANDROID(1).catch()

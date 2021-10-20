@@ -45,9 +45,10 @@ class Ios:
 
 
 if __name__ == '__main__':
-    pass
-    # ios = Ios()
-    # # ios.getCPU()
+
+    ios = Ios()
+    ios.getNetwork()
+    print(ios.getApps())
     # # ios.getNetwork()
     # for i in ios.getProcess():
     #     print(i)

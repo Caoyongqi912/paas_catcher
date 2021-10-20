@@ -22,8 +22,13 @@ class Worker:
         if opt == PlaForms.MAC:
             with open(path, "r") as fp:
                 body = fp.read()
-                cpuInfo = re.findall(r"cpu=(.*?) mem=(.*?)\n", body)
-                return cpuInfo
+            prefInfo = re.findall(r"rzpaas_example_m(.*?)\n", body)
+            _i = []
+            for info in prefInfo:
+                par = info.strip().split()
+                if par[0] != "0.0":
+                    _i.append((float(par[0]),par[-3]))
+            return _i
         elif opt == PlaForms.IOS:
             with open(path, "r") as fp:
                 body = fp.read()
@@ -32,9 +37,10 @@ class Worker:
                 cpu = []
                 mem = []
                 for i in cpuInfo:
-                    cpu.append((i[0], float(i[1]) * int(i[2])))
+                    cpu.append((i[0], float(i[1]) / int(i[2])))
                 for i in memInfo:
                     mem.append((i[0], float(i[1])))
+                print(cpu)
                 return cpu, mem
 
     @staticmethod

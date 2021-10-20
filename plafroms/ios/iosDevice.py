@@ -18,7 +18,7 @@ class IOS:
     path = os.path.join(os.path.dirname(__file__), "ios_out.txt")
 
     def __init__(self, catch_time: int = 0):
-        self.ctime = catch_time * 60 * 60
+        self.ctime = catch_time
 
         if os.path.exists(self.path):
             os.remove(self.path)
@@ -70,7 +70,3 @@ class IOS:
             else:
                 fp.write(_type.value + f":ts={value['timestamp']};value={value['value']}\n")
 
-
-if __name__ == '__main__':
-    a = tidevice.Device()
-    print(a)
