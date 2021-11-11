@@ -5,7 +5,11 @@
 # @File    : main.py
 
 from mac import Mac
+
 if __name__ == '__main__':
     # 单位秒
-    n = 60*60*60
-    Mac(n).catch()
+    n = 120
+    tosee = "同视"
+    rzPass = "rzpaas_examp"
+
+    Mac(targetName=tosee ,catch_time=n).catch()

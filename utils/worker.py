@@ -12,7 +12,7 @@ from utils.opt import PlaForms
 class Worker:
 
     @staticmethod
-    def read(path, opt: PlaForms):
+    def read(path, opt: PlaForms,target="paas"):
         """
         读取
         :param path: 日志地址
@@ -20,15 +20,28 @@ class Worker:
         :return:
         """
         if opt == PlaForms.MAC:
-            with open(path, "r") as fp:
-                body = fp.read()
-            prefInfo = re.findall(r"rzpaas_example_m(.*?)\n", body)
-            _i = []
-            for info in prefInfo:
-                par = info.strip().split()
-                if par[0] != "0.0":
-                    _i.append((float(par[0]),par[-3]))
-            return _i
+
+            if target == "paas":
+                with open(path, "r") as fp:
+                    body = fp.read()
+                prefInfo = re.findall(r"rzpaas_example_m(.*?)\n", body)
+                _i = []
+                for info in prefInfo:
+                    par = info.strip().split()
+                    if par[0] != "0.0":
+                        _i.append((float(par[0]),par[-3]))
+                return _i
+            elif target == "同视":
+                with open(path, "r") as fp:
+                    body = fp.read()
+                prefInfo = re.findall(r"同视           (.*?)\n", body)
+                print(prefInfo)
+                _i = []
+                for info in prefInfo:
+                    par = info.strip().split()
+                    if par[0] != "0.0":
+                        _i.append((float(par[0]), par[-3]))
+                return _i
         elif opt == PlaForms.IOS:
             with open(path, "r") as fp:
                 body = fp.read()
@@ -62,3 +75,8 @@ class Worker:
         pyplot.xlabel(x_label)
         pyplot.plot(x, y)
         pyplot.savefig(savefig)
+
+
+if __name__ == '__main__':
+    a = Worker.read("./test.txt",PlaForms.MAC,"tosee")
+    print(a)
