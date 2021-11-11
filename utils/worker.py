@@ -34,7 +34,7 @@ class Worker:
             elif target == "同视":
                 with open(path, "r") as fp:
                     body = fp.read()
-                prefInfo = re.findall(r"同视           (.*?)\n", body)
+                prefInfo = re.findall(r"同视(.*?)\n", body)
                 print(prefInfo)
                 _i = []
                 for info in prefInfo:
@@ -78,5 +78,5 @@ class Worker:
 
 
 if __name__ == '__main__':
-    a = Worker.read("./test.txt",PlaForms.MAC,"tosee")
+    a = Worker.read("/Users/yongqi/PycharmProjects/plat_catcher/plafroms/mac/mac_out.txt",PlaForms.MAC,"同视")
     print(a)

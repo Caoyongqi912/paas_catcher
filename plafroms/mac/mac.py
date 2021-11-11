@@ -18,6 +18,8 @@ class Mac:
         :param catch_time: 测试时间 xh
         """
         self.targetName = targetName
+        if self.targetName == "同视":
+            self.targetName  += "   "
         self.ctime = catch_time
 
     def catch(self):
@@ -31,18 +33,22 @@ class Mac:
             Shell.invoke(_cmd)
             print(f"catch step {t} ..")
         print("测试结束，生成测试报告中。。。。")
-
-        info = Worker.read(path, opt=PlaForms.MAC,target=self.targetName)
+        print(path)
+        info = Worker.read(path, opt=PlaForms.MAC,target=self.targetName.strip())
         cpu = []
         mem = []
+        print(info)
         for i in info:
-            cpu.append(float(i[0]) / 8)
+            if self.targetName != "rzpaas_examp":
+                cpu.append(float(i[0]))
+            else:
+                cpu.append(float(i[0]) / 8)
             mem.append(float(i[1].split("M")[0]))
 
         cpuNum = [i for i in range(len(cpu))]
-        cpuPic = os.path.join(os.path.dirname(__file__), f"mac_cpu_{self.targetName}.jpg")
+        cpuPic = os.path.join(os.path.dirname(__file__), f"mac_cpu_{self.targetName.strip()}.jpg")
         memNum = [i for i in range(len(mem))]
-        memPic = os.path.join(os.path.dirname(__file__), f"mac_mem_{self.targetName}.jpg")
+        memPic = os.path.join(os.path.dirname(__file__), f"mac_mem_{self.targetName.strip()}.jpg")
 
         cpu_avg = f"{round(sum(cpu) / len(cpu), 2)}%"
         mem_avg = f"{round(sum(mem) / len(mem), 2)}M"
